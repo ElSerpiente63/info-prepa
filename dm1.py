@@ -86,7 +86,37 @@ def precision(p:int)->int:
         S = sum(liste)
         n = n + 1
     return n
+#Exercice 4 (non terminé)
+def distance(pt1:tuple, pt2:tuple)->int:
+    distance_ = sqrt((pt2[0]-pt1[0])**2 + (pt2[1]-pt1[1])**2)
+    return distance_
 
-####################Fin####################
+def matrice(n:int, R:float)->list:
+    import sys
+    import time 
+    color = [[0 for i in range(n)] for k in range(n)] #on crée une liste de liste ne contenant que des 0 et on remplace
+    centre = color[round(n/2)][round(n/2)] #pas demandé mais on distingue les cas où n pair/impair
+    coord_centre = (round(n/2), round(n/2))
+    z = 0 #changement de valeur (ou non) fait 0 fois
+    while z <= n**2:
+        d = sqrt((n/2)**2 + (n/2)**2)
+        for i in range(len(color)):
+            for j in range(len(color[i])):
+                d = sqrt((coord_centre[0] - i)**2 + (coord_centre[1] - j)**2)
+                if (R*sqrt(z) < d <= R*sqrt(z+1)):
+                    color[i][j] = 1
+                    z = z + 1
+                else:
+                    z = z + 1
+                    color[i][j] = 0
+    return color 
 
+
+
+
+
+
+
+#centre de la matrice [round(n/2)]
+    
 
