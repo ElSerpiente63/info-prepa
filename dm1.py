@@ -92,8 +92,6 @@ def distance(pt1:tuple, pt2:tuple)->int:
     return distance_
 
 def matrice(n:int, R:float)->list:
-    import sys
-    import time 
     color = [[0 for i in range(n)] for k in range(n)] #on crée une liste de liste ne contenant que des 0 et on remplace
     centre = color[round(n/2)][round(n/2)] #pas demandé mais on distingue les cas où n pair/impair
     coord_centre = (round(n/2), round(n/2))
@@ -110,13 +108,6 @@ def matrice(n:int, R:float)->list:
                     z = z + 1
                     color[i][j] = 0
     return color 
-
-
-
-
-
-
-
 #centre de la matrice [round(n/2)]
     
 
